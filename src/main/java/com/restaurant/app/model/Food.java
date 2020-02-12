@@ -12,10 +12,7 @@ import org.springframework.stereotype.Component;
 import lombok.Getter;
 import lombok.Setter;
 
-@Component
 @Entity
-@Getter
-@Setter
 @Table
 public class Food {
 
@@ -34,7 +31,47 @@ public class Food {
 	
 	@Column
 	private float Amount;
-	
+
+	public int getSn() {
+		return Sn;
+	}
+
+	public Category getItem() {
+		return Item;
+	}
+
+	public int getQuantity() {
+		return Quantity;
+	}
+
+	public float getRate() {
+		return Rate;
+	}
+
+	public float getAmount() {
+		return Amount;
+	}
+
+	public void setSn(int sn) {
+		Sn = sn;
+	}
+
+	public void setItem(Category item) {
+		Item = item;
+	}
+
+	public void setQuantity(int quantity) {
+		Quantity = quantity;
+	}
+
+	public void setRate(float rate) {
+		Rate = rate;
+	}
+
+	public void setAmount(float amount) {
+		Amount = amount;
+	}
+
 }
 
 

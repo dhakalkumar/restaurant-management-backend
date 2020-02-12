@@ -16,4 +16,22 @@ public class Category {
 	
 	@Column
 	private String itemName;
+
+	public int getId() {
+		return Id;
+	}
+
+	public String getItemName() {
+		return itemName;
+	}
+
+	public void setId(int id) {
+		Id = id;
+	}
+
+	public void setItemName(String itemName) {
+		this.itemName = itemName;
+	}
+	
+	
 }

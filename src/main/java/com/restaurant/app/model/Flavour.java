@@ -16,4 +16,21 @@ public class Flavour {
 	
 	@Column
 	private String flavour;
+
+	public int getId() {
+		return Id;
+	}
+
+	public String getFlavour() {
+		return flavour;
+	}
+
+	public void setId(int id) {
+		Id = id;
+	}
+
+	public void setFlavour(String flavour) {
+		this.flavour = flavour;
+	}
+
 }

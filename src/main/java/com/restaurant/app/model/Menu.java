@@ -16,10 +16,7 @@ import org.springframework.stereotype.Component;
 import lombok.Getter;
 import lombok.Setter;
 
-@Component
 @Entity
-@Getter
-@Setter
 @Table
 public class Menu {
 
@@ -46,5 +43,60 @@ public class Menu {
 	@OneToMany
 	@JoinColumn
 	private List<Flavour> Type;
-	
+
+	public int getId() {
+		return Id;
+	}
+
+	public String getName() {
+		return Name;
+	}
+
+	public float getPrice() {
+		return Price;
+	}
+
+	public String getImage() {
+		return Image;
+	}
+
+	public String getDescription() {
+		return Description;
+	}
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public List<Flavour> getType() {
+		return Type;
+	}
+
+	public void setId(int id) {
+		Id = id;
+	}
+
+	public void setName(String name) {
+		Name = name;
+	}
+
+	public void setPrice(float price) {
+		Price = price;
+	}
+
+	public void setImage(String image) {
+		Image = image;
+	}
+
+	public void setDescription(String description) {
+		Description = description;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+
+	public void setType(List<Flavour> type) {
+		Type = type;
+	}
 }
