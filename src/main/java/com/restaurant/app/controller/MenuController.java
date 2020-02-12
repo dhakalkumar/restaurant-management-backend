@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,15 +20,15 @@ public class MenuController {
 	@Autowired
 	private AddMenuItem menuItem;
 	
+	// show all the menu items
 	@GetMapping("/menu")
 	public List<Menu> getAllMenuItems() {
 		
 		return menuItem.findAll();
 	}
-	
-	@GetMapping("/edit/{id}")
-	public Optional<Menu> editMenu(@PathVariable("id") int id, Model model) {
-		//model.addAttribute("menumodel", menuItem.findById(id));
+	// get a single menu item
+	@GetMapping("/menu/{id}")
+	public Optional<Menu> getById(@PathVariable("id") int id) {
 		
 		return menuItem.findById(id);
 	}
@@ -40,14 +41,12 @@ public class MenuController {
 		return "Deleted item no. "+id+" successfully";
 	}
 	
-	@GetMapping("/update")
+	@PostMapping("/update")
 	public Menu updateMenu(@RequestBody Menu m) {
 		
 		//model.addAttribute("menuList", menuItem.findAll());
 		
 		return menuItem.save(m);
 	}
-	
-	
 	
 }

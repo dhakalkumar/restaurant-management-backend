@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.restaurant.app.model.Bill;
 
-//@Repository
+@Repository
 public interface BillRepo extends JpaRepository<Bill, Integer> {
 
 }
