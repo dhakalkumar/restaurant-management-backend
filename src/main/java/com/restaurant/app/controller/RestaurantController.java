@@ -11,4 +11,5 @@ public class RestaurantController {
 		
 		return "index";
 	}
+	
 }
