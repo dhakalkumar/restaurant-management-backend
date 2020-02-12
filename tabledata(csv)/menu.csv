@@ -1,0 +1,7 @@
+id,description,image,name,price,category_id
+1,"This dish contains chicken wrapped in flour
+dough which is steamed",http://www.random-momo-image.url.com/image.png,"chicken momo",190,1
+2,"This dish contains vegetables wrapped in flour dough which is steamed",http://www.veg-momo-image.url.com/image.png,"veg momo",100,2
+3,"Contains buff meat wrapped in flour dough and steamed",http://www.buff-momo-image.url.com/image.png,"buff momo",150,3
+4,"Contains stir-fried noodles with vegetables",http://www.veg-chowmein.url.com/image.png,"veg chowmein",100,5
+5,"Contains baked dough with chicken sprinkles ",http://www.chicken-pizza.url.com/image.png,"chicken pizza",200,9
