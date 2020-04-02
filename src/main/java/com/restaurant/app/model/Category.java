@@ -12,13 +12,13 @@ public class Category {
 
 	@Id
 	@GeneratedValue
-	private int Id;
+	private int id;
 	
 	@Column
 	private String itemName;
 
 	public int getId() {
-		return Id;
+		return id;
 	}
 
 	public String getItemName() {
@@ -26,12 +26,13 @@ public class Category {
 	}
 
 	public void setId(int id) {
-		Id = id;
+		this.id = id;
 	}
 
 	public void setItemName(String itemName) {
 		this.itemName = itemName;
 	}
+
 	
 	
 }

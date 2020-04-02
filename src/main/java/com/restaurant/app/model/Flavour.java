@@ -12,13 +12,14 @@ public class Flavour {
 
 	@Id
 	@GeneratedValue
-	private int Id;
+	private int id;
 	
 	@Column
 	private String flavour;
+	
 
 	public int getId() {
-		return Id;
+		return id;
 	}
 
 	public String getFlavour() {
@@ -26,11 +27,12 @@ public class Flavour {
 	}
 
 	public void setId(int id) {
-		Id = id;
+		this.id = id;
 	}
 
 	public void setFlavour(String flavour) {
 		this.flavour = flavour;
 	}
 
+	
 }

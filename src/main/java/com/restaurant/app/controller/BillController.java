@@ -20,6 +20,12 @@ public class BillController {
 
 	@Autowired
 	private BillRepo billRepo;
+	
+	@GetMapping("/error")
+	public String getError() {
+		
+		return "error";
+	}
 
 	// get all the bills
 	@GetMapping("/bill")
@@ -31,7 +37,7 @@ public class BillController {
 	// create a bill
 	@PostMapping("/newbill")
 	public Bill createBill(@RequestBody Bill bill) {
-		
+			
 		return billRepo.save(bill);
 	}
 	
@@ -43,22 +49,31 @@ public class BillController {
 	}
 	
 	// update a bill
-	@PutMapping("/bill/{id}")
+	@PutMapping("/updatebill/{id}")
 	public Bill updateBill(@PathVariable("id") int id, @RequestBody Bill billDetails) {
-		//Optional<Bill> bill = billRepo.findById(id);
 		
+		Optional<Bill> bill = billRepo.findById(id);
+//		billDetails.setBillNo(bill.get().getBillNo());
+//		billDetails.setBillingDate(bill.get().getBillingDate());
+//		billDetails.setBillingTime(bill.get().getBillingTime());
+//		billDetails.setTableNo(bill.get().getTableNo());
+//		billDetails.setFoodItems(bill.get().getFoodItems());
+
 		return billRepo.save(billDetails);		
 				
 	}
 	
 	// delete a bill
+	@DeleteMapping
 	@GetMapping("/deletebill/{id}")
 	public String deleteBill(@PathVariable("id") int id) {
-		billRepo.deleteById(id);
-		
-		return "Deleted bill no. " + id + " successfully";
+		if(billRepo.existsById(id)) {
+			billRepo.deleteById(id);		
+			return "Deleted bill no. " + id + " successfully";
+		} else {
+			return "Bill no. " + id + " does not exist in the database!";
+		}
 	}
-	
 }
 
 

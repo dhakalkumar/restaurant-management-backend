@@ -13,12 +13,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import org.springframework.stereotype.Component;
-
-import com.restaurant.app.model.Menu;
-
-import lombok.Getter;
-import lombok.Setter;
 
 @Entity
 @Table
@@ -26,10 +20,10 @@ public class Bill {
 	
 	@Id
 	@GeneratedValue
-	private int Id;
+	private int id;
 	
 	@Column
-	private int BillNo;
+	private int billNo;
 	
 	@Column
 	@Temporal(TemporalType.DATE)
@@ -40,18 +34,18 @@ public class Bill {
 	private Date billingTime;
 	
 	@Column
-	private int TableNo;
+	private int tableNo;
 	
 	@OneToMany
 	@JoinColumn
 	private List<Food> foodItems;
 
 	public int getId() {
-		return Id;
+		return id;
 	}
 
 	public int getBillNo() {
-		return BillNo;
+		return billNo;
 	}
 
 	public Date getBillingDate() {
@@ -63,7 +57,7 @@ public class Bill {
 	}
 
 	public int getTableNo() {
-		return TableNo;
+		return tableNo;
 	}
 
 	public List<Food> getFoodItems() {
@@ -71,11 +65,11 @@ public class Bill {
 	}
 
 	public void setId(int id) {
-		Id = id;
+		this.id = id;
 	}
 
 	public void setBillNo(int billNo) {
-		BillNo = billNo;
+		this.billNo = billNo;
 	}
 
 	public void setBillingDate(Date billingDate) {
@@ -87,11 +81,10 @@ public class Bill {
 	}
 
 	public void setTableNo(int tableNo) {
-		TableNo = tableNo;
+		this.tableNo = tableNo;
 	}
 
 	public void setFoodItems(List<Food> foodItems) {
 		this.foodItems = foodItems;
 	}
-
 }

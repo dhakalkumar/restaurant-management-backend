@@ -11,30 +11,25 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import org.springframework.stereotype.Component;
-
-import lombok.Getter;
-import lombok.Setter;
-
 @Entity
 @Table
 public class Menu {
 
 	@Id
 	@GeneratedValue
-	private int Id;
+	private int id;
 	
 	@Column
-	private String Name;
+	private String name;
 	
 	@Column
-	private float Price;
+	private float price;
 	
 	@Column
-	private String Image;
+	private String image;
 	
 	@Column
-	private String Description;
+	private String description;
 	
 	@OneToOne
 	@JoinColumn
@@ -42,26 +37,26 @@ public class Menu {
 	
 	@OneToMany
 	@JoinColumn
-	private List<Flavour> Type;
+	private List<Flavour> type;
 
 	public int getId() {
-		return Id;
+		return id;
 	}
 
 	public String getName() {
-		return Name;
+		return name;
 	}
 
 	public float getPrice() {
-		return Price;
+		return price;
 	}
 
 	public String getImage() {
-		return Image;
+		return image;
 	}
 
 	public String getDescription() {
-		return Description;
+		return description;
 	}
 
 	public Category getCategory() {
@@ -69,27 +64,27 @@ public class Menu {
 	}
 
 	public List<Flavour> getType() {
-		return Type;
+		return type;
 	}
 
 	public void setId(int id) {
-		Id = id;
+		this.id = id;
 	}
 
 	public void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
 
 	public void setPrice(float price) {
-		Price = price;
+		this.price = price;
 	}
 
 	public void setImage(String image) {
-		Image = image;
+		this.image = image;
 	}
 
 	public void setDescription(String description) {
-		Description = description;
+		this.description = description;
 	}
 
 	public void setCategory(Category category) {
@@ -97,6 +92,6 @@ public class Menu {
 	}
 
 	public void setType(List<Flavour> type) {
-		Type = type;
+		this.type = type;
 	}
 }

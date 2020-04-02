@@ -7,71 +7,67 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import org.springframework.stereotype.Component;
-
-import lombok.Getter;
-import lombok.Setter;
-
 @Entity
 @Table
 public class Food {
 
 	@Id
 	@GeneratedValue
-	private int Sn;
+	private int sn;
 	
 	@OneToOne
-	private Category Item;
+	private Category itemName;
 	
 	@Column
-	private int Quantity;
+	private int quantity;
 	
 	@Column
-	private float Rate;
+	private float rate;
 	
 	@Column
-	private float Amount;
+	private float amount;
 
 	public int getSn() {
-		return Sn;
+		return sn;
 	}
 
-	public Category getItem() {
-		return Item;
+	public Category getItemName() {
+		return itemName;
 	}
 
 	public int getQuantity() {
-		return Quantity;
+		return quantity;
 	}
 
 	public float getRate() {
-		return Rate;
+		return rate;
 	}
 
 	public float getAmount() {
-		return Amount;
+		return amount;
 	}
 
 	public void setSn(int sn) {
-		Sn = sn;
+		this.sn = sn;
 	}
 
-	public void setItem(Category item) {
-		Item = item;
+	public void setItemName(Category itemName) {
+		this.itemName = itemName;
 	}
 
 	public void setQuantity(int quantity) {
-		Quantity = quantity;
+		this.quantity = quantity;
 	}
 
 	public void setRate(float rate) {
-		Rate = rate;
+		this.rate = rate;
 	}
 
 	public void setAmount(float amount) {
-		Amount = amount;
+		this.amount = amount;
 	}
 
+	
 }
 
 

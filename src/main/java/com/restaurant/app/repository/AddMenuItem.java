@@ -5,8 +5,6 @@ import org.springframework.stereotype.Repository;
 
 import com.restaurant.app.model.Menu;
 
-@Repository
 public interface AddMenuItem extends JpaRepository<Menu, Integer> {
-	
-	
+
 }
